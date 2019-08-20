@@ -35,5 +35,37 @@
                 <div id="gameContainer" style="width: 100%; height: 100%; margin: auto"></div>
             </body>
             
+            <script >
+                function cal(){
+                    var ww = window.innerWidth;
+                    var wh = window.innerHeight;
+                    var bodyEl = document.body;
+                    var wrap = document.querySelector('#gameContainer');
+                    if(ww>wh){
+                        console.log('横屏');
+                        bodyEl.style.width='100vw';
+                        bodyEl.style.height='100vh';
+                        wrap.style.width='100vw';
+                        wrap.style.height='100vh';
+                        wrap.style.position='statistic';
+                        wrap.style.left=0;
+                        wrap.style.top=0;
+                        wrap.style.transform='rotate(0deg)'
+                    }else if(ww<wh){
+                        bodyEl.style.width='100vw';
+                        bodyEl.style.height='100vh';
+                        wrap.style.width='100vh';
+                        wrap.style.height='100vw';
+                        wrap.style.position='absolute';
+                        wrap.style.left=-(wh-ww)/2+'px';
+                        wrap.style.top=(wh-ww)/2+'px';
+                        wrap.style.transform='rotate(90deg)'
+                    }
+                }
+            cal()
+            window.onresize=function(){
+                cal()
+            }
+        </script>
 </html>
 

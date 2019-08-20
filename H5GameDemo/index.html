@@ -1,71 +1,94 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
+<!---->
+<!--<html lang="en-us">-->
+<!--    -->
+<!--    <head>-->
+<!--        -->
+<!--        <script>-->
+<!--            function Reset()-->
+<!--            -->
+<!--            {-->
+<!--                -->
+<!--                var canvas = document.getElementById("#canvas");-->
+<!--                canvas.height=  document.documentElement.clientHeight;-->
+<!--                canvas.width =  document.documentElement.clientWidth;-->
+<!--            }-->
+<!--        </script>-->
+<!--    </head>-->
+<!--    <meta charset="utf-8">-->
+<!--        -->
+<!--        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+<!--            -->
+<!--            <title>Unity WebGL Player | DT_wnc</title>-->
+<!--            -->
+<!--            <script src="Build/UnityLoader.js"></script>-->
+<!--            -->
+<!--            <script>-->
+<!--                -->
+<!--                var gameInstance = UnityLoader.instantiate("gameContainer", "Build/H5GameDemouu.json");-->
+<!--                -->
+<!--                </script>-->
+<!--            -->
+<!--            </head>-->
+<!--            -->
+<!--            <body onresize="Reset()" ,scroll= no, style="overflow:hidden">-->
+<!--                <div id="gameContainer" style="width: 100%; height: 100%; margin: auto"></div>-->
+<!--            </body>-->
+<!---->
+<!--</html>-->
 
+<!DOCTYPE html>
 <html lang="en-us">
-    
     <head>
-        
-        <script>
-            function Reset()
-            
-            {
-                
-                var canvas = document.getElementById("#canvas");
-                canvas.height=  document.documentElement.clientHeight;
-                canvas.width =  document.documentElement.clientWidth;
-            }
-        </script>
-    </head>
-    <meta charset="utf-8">
-        
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-            
-            <title>Unity WebGL Player | DT_wnc</title>
-            
-            <script src="Build/UnityLoader.js"></script>
-            
-            <script>
-                
-                var gameInstance = UnityLoader.instantiate("gameContainer", "Build/H5GameDemouu.json");
-                
-                </script>
-            
-            </head>
-            
-            <body onresize="Reset()" ,scroll= no, style="overflow:hidden">
-                <div id="gameContainer" style="width: 100%; height: 100%; margin: auto"></div>
-            </body>
-            
-            <script >
-                function cal(){
-                    var ww = window.innerWidth;
-                    var wh = window.innerHeight;
-                    var bodyEl = document.body;
-                    var wrap = document.querySelector('#gameContainer');
-                    if(ww>wh){
-                        console.log('横屏');
-                        bodyEl.style.width='100vw';
-                        bodyEl.style.height='100vh';
-                        wrap.style.width='100vw';
-                        wrap.style.height='100vh';
-                        wrap.style.position='statistic';
-                        wrap.style.left=0;
-                        wrap.style.top=0;
-                        wrap.style.transform='rotate(0deg)'
-                    }else if(ww<wh){
-                        bodyEl.style.width='100vw';
-                        bodyEl.style.height='100vh';
-                        wrap.style.width='100vh';
-                        wrap.style.height='100vw';
-                        wrap.style.position='absolute';
-                        wrap.style.left=-(wh-ww)/2+'px';
-                        wrap.style.top=(wh-ww)/2+'px';
-                        wrap.style.transform='rotate(90deg)'
+        <meta charset="utf-8">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                <title>Unity WebGL Player | FishMaster</title>
+                <script src="Build/UnityLoader.js"></script>
+                <script>
+                    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/H5GameDemouu.json");
+                    </script>
+                <style>
+                    body{
+                        margin:0;
+                        padding:0;
                     }
-                }
-            cal()
-            window.onresize=function(){
-                cal()
+                </style>
+                </head>
+    <body>
+        <div id="gameContainer" style="width: 100%; height: 100%; margin: auto"></div>
+    </body>
+    
+    <script >
+        function cal(){
+            var ww = window.innerWidth;
+            var wh = window.innerHeight;
+            var bodyEl = document.body;
+            var wrap = document.querySelector('#gameContainer');
+            if(ww>wh){
+                console.log('横屏');
+                bodyEl.style.width='100vw';
+                bodyEl.style.height='100vh';
+                wrap.style.width='100vw';
+                wrap.style.height='100vh';
+                wrap.style.position='statistic';
+                wrap.style.left=0;
+                wrap.style.top=0;
+                wrap.style.transform='rotate(0deg)'
+            }else if(ww<wh){
+                bodyEl.style.width='100vw';
+                bodyEl.style.height='100vh';
+                wrap.style.width='100vh';
+                wrap.style.height='100vw';
+                wrap.style.position='absolute';
+                wrap.style.left=-(wh-ww)/2+'px';
+                wrap.style.top=(wh-ww)/2+'px';
+                wrap.style.transform='rotate(90deg)'
             }
-        </script>
+        }
+    cal()
+    window.onresize=function(){
+        cal()
+    }
+    </script>
 </html>
 
